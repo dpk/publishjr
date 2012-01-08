@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  {% for post in posts %}
+    {% include "post.html" %}
+    {% if not loop.last %}
+      <hr />
+    {% endif %}
+  {% endfor %}
+{% endblock %}

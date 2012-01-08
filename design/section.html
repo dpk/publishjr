@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}: {{ section | capitalize }}{% endblock %}
+
+{% block content %}
+  {% for post in articles %}
+    <h1><a href="{{ post.permalink | e }}">{{ post.title }}</a></h1>
+  {% endfor %}
+{% endblock %}

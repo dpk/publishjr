@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>A Site</title>
+  <id>/feed</id>
+  <link href="/feed" rel="self" type="application/atom+xml" />
+  <link href="/" type="application/atom+xml" />
+  <updated>{{ posts[0].time | date("c") }}</updated>
+  
+  {% for post in posts %}
+    <entry>
+      {% if post.title %}<title type="html">{{ post.title | e }}</title>{% endif %}
+      <id>{{ post.id }}</id>
+      <link rel="alternate" type="text/html" href="{{ post.permalink | e }}" />
+      <published>{{ post.time | date("c") }}</published>
+      <updated>{{ post.updated | date("c") }}</updated>
+      <author>
+        <name>Name</name>
+        <uri>/</uri>
+      </author>
+      <content type="html">
+        {{ post.body | e }}
+      </content>
+    </entry>
+  {% endfor %}
+</feed>

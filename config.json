@@ -1,0 +1,4 @@
+{"base_url" : "http://examples.com/",
+ "permalinks" : ":section/:year/:month/:slug",
+ "time_zone" : "Europe/Isle_of_Man",
+ "path" : "/home/blogger/public_html/"}

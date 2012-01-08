@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+{% include "post.html" %}
+
+{% if post.previous %}
+Previous: 
+<a href="{{ post.previous.permalink }}">{{ post.previous.title }}</a>
+{% endif %}
+
+{% if post.next %}
+Next: 
+<a href="{{ post.next.permalink }}">{{ post.next.title }}</a>
+{% endif %}
+
+{% endblock %}

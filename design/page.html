@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}: {{ page.title }}{% endblock %}
+
+{% block content %}
+<article class="articles">
+  <h1>{{ page.title }}</h1>
+  {{ page.body }}
+</article>
+{% endblock %}
+

@@ -1,0 +1,18 @@
+Some people wanted me to release the source code of my blogging system,
+so I did the least possible amount of work in order to release it.
+There's probably at least one thing about this that's broken for
+anyone who wanted to use this who isn't me.
+
+Apologies to Dan Cederholm for using the name Publish Jr. He had this
+name first, way back in 2002.
+
+A short guide:
+
+* publishjr.php publishes to the site directory, which is a private
+  copy of the site used to prevent downtime during site regeneration.
+* update_site invokes this automatically then rsyncs to the site_public
+  directory, which you should point your web-server at.
+* updater.rb depends on inotify and rb-inotify, and calls update_site
+  automatically when you make a change to your site.
+
+You should set up config.json appropriately.
